@@ -1,12 +1,19 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.mail import send_mail
-from .forms import ParticipantForm
+from .forms import ParticipantForm, InquiryForm, NewslettersubcriberForm
 
 
 # Create your views here.
 
 def homepage(request):
-    return render(request, 'eventapp/homepage.html')
+    if request.method == "POST":
+        form = NewslettersubcriberForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = NewslettersubcriberForm()
+    return render(request, 'eventapp/index.html',{'form':form})
 
 def register(request ):   #participant_id
 
@@ -25,7 +32,7 @@ def register(request ):   #participant_id
             
             sent = True 
 
-            return redirect('/register')  
+            return redirect('/')  
             
     else:  
         form = ParticipantForm()  
@@ -34,3 +41,22 @@ def register(request ):   #participant_id
 def show(request):  
     participants = Participant.objects.all()  
     return render(request,"eventapp/show.html",{'students':students})  
+
+def contact(request):
+    if request == "POST":
+        form = InquiryForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = InquiryForm()
+    return render(request, "eventapp/contact.html",{'form':form})
+
+# def subscribe(request):
+#     if request == "POST":
+#         form = NewslettersubcriberForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('')
+#     else:
+#         form = NewslettersubcriberForm()
+#     return render(request, "eventapp/index.html",{'form':form})

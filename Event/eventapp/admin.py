@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Speaker, Participant
+from .models import Speaker, Participant, Inquiry, Newslettersubcriber, Sociallink
 
 # Register your models here.
 
@@ -12,3 +12,6 @@ class ParticipantAdmin(admin.ModelAdmin):
     list_display = ['name', 'email','Attendance', 'Nationality','Phone_number',]
     # list_filter = ['available', 'created', 'updated']
     
+admin.site.register(Inquiry)
+admin.site.register(Newslettersubcriber)
+admin.site.register(Sociallink)

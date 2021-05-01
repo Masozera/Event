@@ -28,4 +28,25 @@ class Participant (models.Model):
     def __str__(self):
         return self.name
 
+class Inquiry(models.Model):
+    name   = models.CharField(max_length=100, blank=True)
+    email  = models.CharField(max_length=100, blank=True)
+    message = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return self.name
+
+class Newslettersubcriber(models.Model):
+    email   =  models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return self.email
+
+class  Sociallink(models.Model):
+    facebook = models.CharField(max_length = 100, blank = True)
+    twitter  = models.CharField(max_length = 100, blank = True)
+    linkedin = models.CharField(max_length= 100, blank = True)
+
+
+
 

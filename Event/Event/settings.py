@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'eventapp.apps.EventappConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,5 @@ EMAIL_HOST_PASSWORD = 'deldestino'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

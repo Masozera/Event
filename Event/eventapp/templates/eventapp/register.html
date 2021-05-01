@@ -1,48 +1,117 @@
-<form method="POST" class="post-form" action="/register">  
-        {% csrf_token %}  
-    <div class="container">  
-<br>  
-    <div class="form-group row">  
-    <label class="col-sm-1 col-form-label"></label>  
-    <div class="col-sm-4">  
-    <h3>Enter Details</h3>  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">name</label>  
-    <div class="col-sm-4">  
-      {{ form.name }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">email:</label>  
-    <div class="col-sm-4">  
-      {{ form.email }}  
-    </div>  
-  </div>  
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label"> attendance</label>  
-    <div class="col-sm-4">  
-      {{ form.Attendance }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Student Nationality:</label>  
-    <div class="col-sm-4">  
-      {{ form.Nationality}}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">PhoneNumber</label>  
-    <div class="col-sm-4">  
-      {{ form.Phone_number }}  
-    </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-1 col-form-label"></label>  
-    <div class="col-sm-4">  
-    <button type="submit" class="btn btn-primary">Submit</button>  
-    </div>  
-  </div>  
-    </div>  
-</form>  
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="description" content="Evento -Event Html Template">
+<meta name="keywords" content="Evento , Event , Html, Template">
+<meta name="author" content="ColorLib">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title> </title>
+
+
+
+
+<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+
+<link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/et-line.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/ionicons.min.css' %}" rel="stylesheet">
+
+<link href="{% static 'assets/css/owl.carousel.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/owl.theme.default.min.css' %}" rel="stylesheet">
+
+<link rel="{% static 'stylesheet" href="assets/css/animate.min.css' %}">
+
+<link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="container ">
+    <div class="row ">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+     <form method="POST" class="checkout-form" action="">
+        <div class="cf-title">Personal Info</div>
+        <div class="row address-inputs">
+            <div class="col-md-12">
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Nationality">
+            </div>
+            <div class="col-md-6">
+                <input type="text" placeholder="PhoneNumber">
+            </div>
+            <div class="col-md-6">
+                <input type="text" placeholder="Area Of Residence">
+            </div>
+        </div>
+        <div class="cf-title">Attendance Info</div>
+        <div class="row shipping-btns">
+            <div class="col-6">
+                <h4>InPerson</h4>
+            </div>
+            <div class="col-6">
+                <div class="cf-radio-btns">
+                    <div class="cfr-item">
+                        <input type="radio" name="shipping" id="ship-1">
+                        <label for="ship-1">Confirm</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h4>Virtually  </h4>
+            </div>
+            <div class="col-6">
+                <div class="cf-radio-btns">
+                    <div class="cfr-item">
+                        <input type="radio" name="shipping" id="ship-2">
+                        <label for="ship-2">Confirm</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="site-btn submit-order-btn">Register</button>
+     </form>
+    </div>
+    <div class="col-lg-2"></div>
+    </div>
+</div>
+
+
+
+
+    <script src=" {% static 'assets/js/jquery.min.js' %}"></script>
+
+<script src="{% static 'assets/js/popper.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+
+<script src="{% static 'assets/js/parallax.min.js' %}"></script>
+
+<script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+
+<script src="{% static 'assets/js/jquery.countdown.min.js' %}"></script>
+
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+
+<script src="{% static 'assets/js/main.js' %}"></script>
+<script async src="{% static 'https://www.googletagmanager.com/gtag/js?id=UA-23581568-13' %}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+</body>
+
+
+</html>
